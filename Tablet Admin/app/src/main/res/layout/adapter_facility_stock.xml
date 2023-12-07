@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="facility"
+            type="com.varitas.gokulpos.tablet.response.Facility" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutDetails"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/regularTextSize"
+        android:elevation="@dimen/_4sdp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_5sdp"
+            android:singleLine="true"
+            android:text='@{facility.name}'
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center_vertical|end"
+            android:paddingStart="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_5sdp"
+            android:singleLine="true"
+            android:text='@{Integer.toString(facility.quantity).length() > 1 ? Integer.toString(facility.quantity) : "0" + Integer.toString(facility.quantity)}'
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize" />
+
+    </LinearLayout>
+
+</layout>

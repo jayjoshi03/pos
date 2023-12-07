@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "716951567024",
+    "project_id": "gokulpos",
+    "storage_bucket": "gokulpos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:716951567024:android:a5a70f684d2ca4598bd975",
+        "android_client_info": {
+          "package_name": "com.varitas.gokulpos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "716951567024-s6a4u3vks3vk2lv357jnkhen2qsfbe80.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.varitas.gokulpos",
+            "certificate_hash": "76b42276578fcf984bfddb0fe8745d489a660ead"
+          }
+        },
+        {
+          "client_id": "716951567024-d49jpus7fqsj2vbtjhr2hbua9gn5o0do.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnj6UuH6TgEQ4EJCCzeuuljP1l8iaOR0s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "716951567024-d49jpus7fqsj2vbtjhr2hbua9gn5o0do.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

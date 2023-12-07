@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.varitas.gokulpos.R" />
+
+        <variable
+            name="id"
+            type="Integer" />
+
+        <variable
+            name="subTotal"
+            type="String" />
+
+        <variable
+            name="lableSubTotal"
+            type="String" />
+
+        <variable
+            name="totalQty"
+            type="String" />
+
+        <variable
+            name="lableQty"
+            type="String" />
+
+        <variable
+            name="totalTax"
+            type="String" />
+
+        <variable
+            name="lableTax"
+            type="String" />
+
+        <variable
+            name="grandTotal"
+            type="String" />
+
+        <variable
+            name="lableGrandTotal"
+            type="String" />
+
+        <variable
+            name="header"
+            type="com.varitas.gokulpos.model.Header" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        tools:context=".activity.CustomerDetailsActivity">
+
+        <include
+            android:id="@+id/layoutToolbar"
+            layout="@layout/toolbar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.8">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:backgroundTint="@color/white"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_10sdp">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/editTextOrderSearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/inputSize"
+                        android:layout_gravity="center"
+                        android:visibility="@{id > 0 ? View.GONE : View.VISIBLE}"
+                        android:background="@drawable/custom_register"
+                        android:completionThreshold="1"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:gravity="center_vertical"
+                        android:hint="@string/hint_SearchByPOrder"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:paddingStart="@dimen/_5sdp"
+                        android:paddingEnd="@dimen/_5sdp"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/darkGrey"
+                        android:textCursorDrawable="@drawable/cursor_color"
+                        android:textSize="@dimen/textSize" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:enabled="false"
+                        android:hint="@string/hint_PurchaseOrderNo"
+                        android:textSize="@dimen/textSize"
+                        android:visibility="@{id > 0 ? View.GONE : View.VISIBLE}"
+                        app:boxStrokeColor="@color/darkGrey"
+                        app:boxStrokeWidthFocused="1dp"
+                        app:hintTextColor="@color/darkGrey">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextPurchaseNo"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:autofillHints="BirthDay"
+                            android:focusableInTouchMode="false"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:gravity="center_vertical"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"
+                            android:singleLine="true"
+                            android:textColor="@color/darkGrey"
+                            android:textColorHint="@color/darkGrey"
+                            android:textCursorDrawable="@drawable/cursor_color"
+                            android:textSize="@dimen/textSize" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:hint="@string/hint_InvoiceId"
+                        android:textSize="@dimen/textSize"
+                        android:visibility="@{id > 0 ? View.VISIBLE : View.GONE}"
+                        app:boxStrokeColor="@color/darkGrey"
+                        app:boxStrokeWidthFocused="1dp"
+                        app:hintTextColor="@color/darkGrey">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextInvoiceId"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:autofillHints="BirthDay"
+                            android:focusableInTouchMode="false"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:gravity="center_vertical"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"
+                            android:singleLine="true"
+                            android:textColor="@color/darkGrey"
+                            android:textColorHint="@color/darkGrey"
+                            android:textCursorDrawable="@drawable/cursor_color"
+                            android:textSize="@dimen/textSize" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:enabled="false"
+                        android:hint="@string/hint_VendorName"
+                        android:textSize="@dimen/textSize"
+                        android:visibility="@{id > 0 ? View.VISIBLE : View.GONE}"
+                        app:boxStrokeColor="@color/darkGrey"
+                        app:boxStrokeWidthFocused="1dp"
+                        app:hintTextColor="@color/darkGrey">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextVendorName"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:autofillHints="BirthDay"
+                            android:focusableInTouchMode="false"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:gravity="center_vertical"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"
+                            android:singleLine="true"
+                            android:textColor="@color/darkGrey"
+                            android:textColorHint="@color/darkGrey"
+                            android:textCursorDrawable="@drawable/cursor_color"
+                            android:textSize="@dimen/textSize" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:focusableInTouchMode="false"
+                            android:hint="@string/lbl_BillDate"
+                            android:textSize="@dimen/textSize"
+                            app:boxStrokeColor="@color/darkGrey"
+                            android:enabled='@{id > 0 ? false : true}'
+                            app:boxStrokeWidthFocused="1dp"
+                            app:hintTextColor="@color/darkGrey">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editTextBillDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:autofillHints="BirthDay"
+                                android:focusableInTouchMode="false"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:gravity="center_vertical"
+                                android:imeOptions="actionDone"
+                                android:inputType="text"
+                                android:singleLine="true"
+                                android:textColor='@{id > 0 ? R.color.darkGrey : R.color.black}'
+                                android:textColorHint="@color/darkGrey"
+                                android:textCursorDrawable="@drawable/cursor_color"
+                                android:textSize="@dimen/textSize" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_weight="0.5"
+                            android:focusableInTouchMode="false"
+                            android:hint="@string/lbl_DueDate"
+                            android:textSize="@dimen/textSize"
+                            app:boxStrokeColor="@color/darkGrey"
+                            android:enabled='@{id > 0 ? false : true}'
+                            app:boxStrokeWidthFocused="1dp"
+                            app:hintTextColor="@color/darkGrey">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editTextDueDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:autofillHints="BirthDay"
+                                android:focusableInTouchMode="false"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:gravity="center_vertical"
+                                android:imeOptions="actionDone"
+                                android:inputType="text"
+                                android:singleLine="true"
+                                android:textColor='@{id > 0 ? R.color.darkGrey : R.color.black}'
+                                android:textColorHint="@color/darkGrey"
+                                android:textCursorDrawable="@drawable/cursor_color"
+                                android:textSize="@dimen/textSize" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/inputSize"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/table_header"
+                        android:elevation="@dimen/_8sdp"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.22"
+                            android:fontFamily="@font/montserrat_semi_bold"
+                            android:gravity="center_vertical"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:text='@{header.id}'
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12ssp"
+                            tools:ignore="NestedWeights" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.4"
+                            android:fontFamily="@font/montserrat_semi_bold"
+                            android:gravity="center_vertical"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:text='@{header.name}'
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12ssp"
+                            tools:ignore="NestedWeights" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.38"
+                            android:fontFamily="@font/montserrat_semi_bold"
+                            android:gravity="center_vertical"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:text='@{header.payment}'
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12ssp"
+                            tools:ignore="NestedWeights" />
+
+                    </LinearLayout>
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycleViewAddItem"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layoutAnimation="@anim/layout_animation_fall_down"
+                            android:minHeight="@dimen/_50sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:scrollbars="vertical" />
+                </LinearLayout>
+
+            </ScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_weight="0.2"
+                android:weightSum="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.2"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:fontFamily="@font/montserrat_semi_bold"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text='@{lableQty}'
+                        android:textColor="@color/darkGrey"
+                        android:textSize="@dimen/_11ssp"
+                        tools:ignore="NestedWeights" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5"
+                            android:fontFamily="@font/montserrat_semi_bold"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text='@{totalQty}'
+                            android:textColor="@color/darkGrey"
+                            android:textSize="@dimen/_11ssp"
+                            tools:ignore="NestedWeights" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.55"
+                        android:fontFamily="@font/montserrat_semi_bold"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text='@{lableSubTotal}'
+                        android:textColor="@color/darkGrey"
+                        android:textSize="@dimen/_11ssp"
+                        tools:ignore="NestedWeights" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.45"
+                            android:fontFamily="@font/montserrat_semi_bold"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text='@{subTotal}'
+                            android:textColor="@color/darkGrey"
+                            android:textSize="@dimen/_11ssp"
+                            tools:ignore="NestedWeights" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.2"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:fontFamily="@font/montserrat_semi_bold"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text='@{lableTax}'
+                        android:textColor="@color/darkGrey"
+                        android:textSize="@dimen/_11ssp"
+                        tools:ignore="NestedWeights" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5"
+                            android:fontFamily="@font/montserrat_semi_bold"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text='@{totalTax}'
+                            android:textColor="@color/darkGrey"
+                            android:textSize="@dimen/_11ssp"
+                            tools:ignore="NestedWeights" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_weight="0.5"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.55"
+                        android:fontFamily="@font/montserrat_semi_bold"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text='@{lableGrandTotal}'
+                        android:textColor="@color/darkGrey"
+                        android:textSize="@dimen/_11ssp"
+                        tools:ignore="NestedWeights" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.45"
+                            android:fontFamily="@font/montserrat_semi_bold"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text='@{grandTotal}'
+                            android:textColor="@color/darkGrey"
+                            android:textSize="@dimen/_11ssp"
+                            tools:ignore="NestedWeights" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonPayment"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.4"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/button_clicked"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:gravity="center"
+                    android:text="@string/button_Payment"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sdp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

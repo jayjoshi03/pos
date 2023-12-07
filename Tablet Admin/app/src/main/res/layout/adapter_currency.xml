@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="com.varitas.gokulpos.tablet.utilities.Utils" />
+        <import type="android.content.Context" />
+
+        <variable
+            name="currency"
+            type="Double" />
+
+    </data>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonCurrency"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:backgroundTint="@color/buttonVoid"
+        android:fontFamily="@font/montserrat_semi_bold"
+        android:gravity="center"
+        android:text='@{Utils.INSTANCE.setAmountWithCurrency(context, currency)}'
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/commonTextSize" />
+
+</layout>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/layoutToolbar"
+            layout="@layout/toolbar" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/regularTextSize"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:background="@drawable/dept_filter"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.05" />
+
+                    <SearchView
+                        android:id="@+id/searchProduct"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:background="@color/transparent"
+                        android:closeIcon="@null"
+                        android:gravity="center_vertical|end"
+                        android:iconifiedByDefault="false"
+                        android:queryHint="@string/hint_Search"
+                        android:searchIcon="@null"
+                        android:theme="@style/SearchViewTheme"
+                        app:searchIcon="@null" />
+
+                    <ImageView
+                        android:id="@+id/imageViewSearch"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.15"
+                        android:contentDescription="@string/hint_Search"
+                        android:padding="@dimen/_3sdp"
+                        android:src="@drawable/ic_search"
+                        app:tint="@color/white" />
+
+                </LinearLayout>
+
+                <include
+                    android:id="@+id/layoutHeader"
+                    layout="@layout/adapter_header" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:orientation="vertical"
+                    android:weightSum="1">
+
+                    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                        android:id="@+id/swipeRefresh"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.9"
+                        android:orientation="vertical">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycleViewProducts"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layoutAnimation="@anim/layout_animation_fall_down"
+                            android:scrollbars="vertical"
+                            app:fastScrollEnabled="true"
+                            app:fastScrollHorizontalThumbDrawable="@drawable/thumb_drawable"
+                            app:fastScrollHorizontalTrackDrawable="@drawable/line_drawable"
+                            app:fastScrollVerticalThumbDrawable="@drawable/thumb_drawable"
+                            app:fastScrollVerticalTrackDrawable="@drawable/line_drawable" />
+
+                    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.1"
+                        android:gravity="center_vertical|end"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/buttonAddVendor"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_weight="0.2"
+                            android:backgroundTint="@color/buttonVoid"
+                            android:fontFamily="@font/montserrat_semi_bold"
+                            android:gravity="center"
+                            android:text="@string/button_AddVendor"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/commonTextSize" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/buttonAddSalePerson"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_weight="0.2"
+                            android:backgroundTint="@color/buttonReturn"
+                            android:fontFamily="@font/montserrat_semi_bold"
+                            android:gravity="center"
+                            android:text="@string/button_AddSalePerson"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/commonTextSize" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

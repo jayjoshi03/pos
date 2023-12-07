@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="itemCount"
+            type="com.varitas.gokulpos.tablet.response.ItemCount" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutDetails"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/regularTextSize"
+        android:elevation="@dimen/_4sdp"
+        android:weightSum="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_3sdp"
+            android:paddingEnd="@dimen/_3sdp"
+            android:singleLine="true"
+            android:text='@{Integer.toString(pos).length() > 1 ? Integer.toString(pos) : "0"+Integer.toString(pos)}'
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.8"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_3sdp"
+            android:paddingEnd="@dimen/_3sdp"
+            android:singleLine="true"
+            android:text='@{itemCount.itemName ?? ""}'
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize"
+            tools:ignore="NestedWeights" />
+
+    </LinearLayout>
+
+</layout>

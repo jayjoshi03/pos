@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="dropDown"
+            type="com.varitas.gokulpos.tablet.response.CommonDropDown" />
+
+    </data>
+
+    <CheckBox
+        android:id="@+id/checkBoxSelector"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/regularTextSize"
+        android:button="@drawable/selector_check"
+        android:buttonTint="@color/pink"
+        android:fontFamily="@font/montserrat_regular"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/_5sdp"
+        android:text='@{dropDown.label ?? ""}'
+        android:textColor="@color/black"
+        android:textSize="@dimen/commonTextSize" />
+
+</layout>

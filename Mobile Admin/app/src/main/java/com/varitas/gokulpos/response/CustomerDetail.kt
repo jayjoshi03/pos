@@ -1,0 +1,5 @@
+package com.varitas.gokulpos.response
+
+import com.google.gson.annotations.SerializedName
+
+data class CustomerDetail(@SerializedName("id") var id: Int? = null, @SerializedName("name") var name: String? = null, @SerializedName("dob") var dob: String? = null, @SerializedName("imageUrl") var imageUrl: String? = null, @SerializedName("gender") var gender: Int? = null, @SerializedName("email") var email: String? = null, @SerializedName("companyName") var companyName: String? = null, @SerializedName("mobileNo") var mobileNo: String? = null, @SerializedName("status") var status: Int? = null, @SerializedName("address") var address: String? = null, @SerializedName("city") var city: String? = null, @SerializedName("state") var state: String? = null, @SerializedName("pincode") var pincode: String? = null)

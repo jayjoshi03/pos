@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/layoutToolbar"
+        layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/regularTextSize"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/textViewDateRange"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonDate"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="0.2"
+            android:backgroundTint="@color/buttonDiscount"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:gravity="center"
+            android:text="@string/button_DateRange"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/commonTextSize" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <WebView
+            android:id="@+id/webViewMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_5sdp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/buttonPrint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:clickable="true"
+            android:contentDescription="Fab"
+            android:elevation="@dimen/_7sdp"
+            android:focusable="true"
+            android:gravity="bottom|right"
+            android:maxWidth="@dimen/_5sdp"
+            android:maxHeight="@dimen/_5sdp"
+            android:minWidth="@dimen/_5sdp"
+            android:minHeight="@dimen/_5sdp"
+            android:src="@drawable/ic_print"
+            app:backgroundTint="@color/pink"
+            app:fabCustomSize="@dimen/_15sdp"
+            app:maxImageSize="@dimen/_10sdp"
+            app:pressedTranslationZ="@dimen/_5sdp"
+            app:tint="@color/white"
+            tools:ignore="RtlHardcoded" />
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- FONT SIZE -->
+    <dimen name="textSize">@dimen/_13ssp</dimen>
+    <dimen name="customerName">@dimen/_20ssp</dimen>
+    <dimen name="commonTextSize">@dimen/_10ssp</dimen>
+    <dimen name="inputSize">@dimen/_35sdp</dimen>
+    <dimen name="spinnerSize">@dimen/_25sdp</dimen>
+    <!--FONT SIZE-->
+
+</resources>

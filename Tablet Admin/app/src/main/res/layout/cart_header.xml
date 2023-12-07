@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/regularTextSize"
+    android:background="@color/darkGrey"
+    android:elevation="@dimen/_4sdp"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/_2sdp"
+    android:paddingEnd="@dimen/_2sdp"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.15"
+        android:fontFamily="@font/montserrat_semi_bold"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/_3sdp"
+        android:paddingEnd="@dimen/_3sdp"
+        android:singleLine="true"
+        android:text="@string/lbl_SKU"
+        android:textColor="@color/white"
+        android:textSize="@dimen/commonTextSize" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.35"
+        android:fontFamily="@font/montserrat_semi_bold"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/_3sdp"
+        android:paddingEnd="@dimen/_3sdp"
+        android:singleLine="true"
+        android:text="@string/lbl_Description"
+        android:textColor="@color/white"
+        android:textSize="@dimen/commonTextSize" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.1"
+        android:fontFamily="@font/montserrat_semi_bold"
+        android:gravity="center"
+        android:paddingStart="@dimen/_3sdp"
+        android:paddingEnd="@dimen/_3sdp"
+        android:singleLine="true"
+        android:text="@string/lbl_Qty"
+        android:textColor="@color/white"
+        android:textSize="@dimen/commonTextSize" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.15"
+        android:fontFamily="@font/montserrat_semi_bold"
+        android:gravity="center"
+        android:paddingStart="@dimen/_3sdp"
+        android:paddingEnd="@dimen/_3sdp"
+        android:singleLine="true"
+        android:text="@string/lbl_Price"
+        android:textColor="@color/white"
+        android:textSize="@dimen/commonTextSize" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.15"
+        android:fontFamily="@font/montserrat_semi_bold"
+        android:gravity="center"
+        android:paddingStart="@dimen/_3sdp"
+        android:paddingEnd="@dimen/_3sdp"
+        android:singleLine="true"
+        android:text="@string/lbl_Amount"
+        android:textColor="@color/white"
+        android:textSize="@dimen/commonTextSize" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.1"
+        android:fontFamily="@font/montserrat_semi_bold"
+        android:gravity="center"
+        android:paddingStart="@dimen/_3sdp"
+        android:paddingEnd="@dimen/_3sdp"
+        android:singleLine="true"
+        android:text="@string/Menu_Tax"
+        android:textColor="@color/white"
+        android:textSize="@dimen/commonTextSize" />
+
+
+
+</LinearLayout>

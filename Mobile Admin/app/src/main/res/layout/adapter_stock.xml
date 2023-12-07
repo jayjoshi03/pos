@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="stock"
+            type="com.varitas.gokulpos.response.ItemStockGet" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@color/white"
+        android:backgroundTint="@color/lighterGrey"
+        android:elevation="@dimen/_4sdp"
+        android:orientation="vertical"
+        android:padding="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_8sdp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:text='@{stock.sFacility ?? ""}'
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/commonTextSize" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:backgroundTint="@color/darkGrey"
+                android:enabled="false"
+                android:hint="@string/lbl_CurrentQty"
+                android:textSize="@dimen/textSize"
+                app:boxStrokeColor="@color/darkGrey"
+                app:boxStrokeWidthFocused="1dp"
+                app:hintTextColor="@color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputCurrentQty"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:autofillHints="Name"
+                    android:backgroundTint="@color/darkGrey"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center_vertical"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textColor="@color/darkGrey"
+                    android:textColorHint="@color/darkGrey"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:textSize="@dimen/textSize" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_weight="0.5"
+                android:hint="@string/lbl_Qty"
+                android:textSize="@dimen/textSize"
+                app:boxStrokeColor="@color/darkGrey"
+                app:boxStrokeWidthFocused="1dp"
+                app:hintTextColor="@color/darkGrey">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputQty"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:autofillHints="Name"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center_vertical"
+                    android:imeOptions="actionDone"
+                    android:selectAllOnFocus="true"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:text='@{Long.toString(stock.qty)}'
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/darkGrey"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:textSize="@dimen/textSize" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

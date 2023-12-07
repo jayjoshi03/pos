@@ -1,0 +1,1737 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="@dimen/_5sdp"
+    android:layout_marginTop="@dimen/_5sdp"
+    android:layout_marginEnd="@dimen/_5sdp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.15"
+            android:enabled="false"
+            android:hint="@string/hint_SKU"
+            android:textSize="@dimen/commonTextSize"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="1dp"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputSKU"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="SKU"
+                android:enabled="false"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center_vertical"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:textSize="@dimen/commonTextSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="0.35"
+            android:hint="@string/hint_UPC"
+            android:textSize="@dimen/commonTextSize"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="1dp"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputUPC"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="UPC"
+                android:backgroundTint="@color/lighterGrey"
+                android:enabled="false"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center_vertical"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:maxLength="14"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:textSize="@dimen/commonTextSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutUPC"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="0.35"
+            android:hint="@string/hint_Name"
+            android:textSize="@dimen/commonTextSize"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="1dp"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="Name"
+                android:backgroundTint="@color/lighterGrey"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center_vertical"
+                android:imeOptions="actionDone"
+                android:inputType="textCapCharacters"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:textSize="@dimen/commonTextSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/imageViewScan"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="0.15"
+            android:backgroundTint="@color/buttonVoid"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:gravity="center"
+            android:text="@string/lbl_ScanBarcode"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/commonTextSize" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/regularTextSize"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:background="@drawable/spinner_layout"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.varitas.gokulpos.tablet.utilities.CustomSpinner
+                android:id="@+id/spinnerDepartment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_spinner"
+                android:backgroundTint="@color/pink"
+                android:dropDownVerticalOffset="@dimen/_10sdp"
+                android:popupBackground="@color/white"
+                android:spinnerMode="dropdown"
+                android:theme="@style/AppTheme" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="0.25"
+            android:background="@drawable/spinner_layout"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.varitas.gokulpos.tablet.utilities.CustomSpinner
+                android:id="@+id/spinnerCategory"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_spinner"
+                android:backgroundTint="@color/pink"
+                android:dropDownVerticalOffset="@dimen/_10sdp"
+                android:popupBackground="@color/white"
+                android:spinnerMode="dropdown"
+                android:theme="@style/AppTheme" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="0.25"
+            android:background="@drawable/spinner_layout"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.varitas.gokulpos.tablet.utilities.CustomSpinner
+                android:id="@+id/spinner_sub_category"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_spinner"
+                android:backgroundTint="@color/pink"
+                android:dropDownVerticalOffset="@dimen/_10sdp"
+                android:popupBackground="@color/white"
+                android:spinnerMode="dropdown"
+                android:theme="@style/AppTheme" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="0.25"
+            android:background="@drawable/spinner_layout"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <com.varitas.gokulpos.tablet.utilities.CustomSpinner
+                android:id="@+id/spinnerItemType"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_spinner"
+                android:backgroundTint="@color/pink"
+                android:dropDownVerticalOffset="@dimen/_10sdp"
+                android:popupBackground="@color/white"
+                android:spinnerMode="dropdown"
+                android:theme="@style/AppTheme" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/regularTextSize"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:background="@drawable/spinner_layout"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.varitas.gokulpos.tablet.utilities.CustomSpinner
+                android:id="@+id/spinnerBrand"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_spinner"
+                android:backgroundTint="@color/pink"
+                android:dropDownVerticalOffset="@dimen/_10sdp"
+                android:popupBackground="@color/white"
+                android:spinnerMode="dropdown"
+                android:theme="@style/AppTheme" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="0.25"
+            android:background="@drawable/spinner_layout"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.varitas.gokulpos.tablet.utilities.CustomSpinner
+                android:id="@+id/spinnerTaxGroup"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_spinner"
+                android:backgroundTint="@color/pink"
+                android:dropDownVerticalOffset="@dimen/_10sdp"
+                android:popupBackground="@color/white"
+                android:spinnerMode="dropdown"
+                android:theme="@style/AppTheme" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewTax"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="0.5"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center_vertical"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/regularTextSize"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/checkBoxInActive"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@string/lbl_InActive"
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize"
+            android:theme="@style/SCBSwitch" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/checkBoxPrice"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="0.25"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_5sdp"
+            android:text="@string/lbl_PromptPrice"
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize"
+            android:theme="@style/SCBSwitch" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/checkBoxQty"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="0.25"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_5sdp"
+            android:text="@string/lbl_PromptQty"
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize"
+            android:theme="@style/SCBSwitch"
+            tools:ignore="RtlSymmetry" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/checkBoxNonStock"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="0.25"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_5sdp"
+            android:text="@string/checkBox_NonStock"
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize"
+            android:theme="@style/SCBSwitch"
+            tools:ignore="RtlSymmetry" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutLotMatrix"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/_5sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="8">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/regularTextSize"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:background="@drawable/spinner_layout"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.varitas.gokulpos.tablet.utilities.CustomSpinner
+                    android:id="@+id/spinnerAttributes"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_spinner"
+                    android:backgroundTint="@color/pink"
+                    android:dropDownVerticalOffset="@dimen/_10sdp"
+                    android:popupBackground="@color/white"
+                    android:spinnerMode="dropdown"
+                    android:theme="@style/AppTheme" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonAddAttribute"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/buttonReturn"
+                android:fontFamily="@font/montserrat_bold"
+                android:gravity="center"
+                android:text="@string/button_Add"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/commonTextSize" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="8">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycleViewSizePack"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:layoutAnimation="@anim/layout_animation_fall_down"
+                android:scrollbars="vertical" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/imageViewAddPack"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/spinnerSize"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/buttonReturn"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:gravity="center"
+                android:text="@string/button_AddPack"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/commonTextSize"
+                android:visibility="invisible" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="8">
+
+            <AutoCompleteTextView
+                android:id="@+id/textInputBarItemSKU"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/regularTextSize"
+                android:layout_gravity="center"
+                android:layout_weight="1.5"
+                android:background="@drawable/custom_register"
+                android:completionThreshold="1"
+                android:fontFamily="@font/montserrat_regular"
+                android:gravity="center_vertical"
+                android:hint="@string/hint_SearchBy"
+                android:imeOptions="actionDone"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/lighterGrey"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:textSize="@dimen/commonTextSize" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="2"
+                android:enabled="false"
+                android:hint="@string/hint_ItemName"
+                android:textSize="@dimen/commonTextSize"
+                app:boxStrokeColor="@color/black"
+                app:boxStrokeWidthFocused="1dp"
+                app:hintTextColor="@color/black">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputBarItemName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:autofillHints="Price"
+                    android:backgroundTint="@color/black"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:selectAllOnFocus="true"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:textSize="@dimen/commonTextSize" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:hint="@string/lbl_Qty"
+                android:textSize="@dimen/commonTextSize"
+                app:boxStrokeColor="@color/black"
+                app:boxStrokeWidthFocused="1dp"
+                app:hintTextColor="@color/black">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputBarItemQty"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:autofillHints="Price"
+                    android:backgroundTint="@color/lighterGrey"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center_vertical"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:selectAllOnFocus="true"
+                    android:singleLine="true"
+                    android:text="00"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:textSize="@dimen/commonTextSize" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/regularTextSize"
+                android:layout_weight="1.5"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:background="@drawable/spinner_layout"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <com.varitas.gokulpos.tablet.utilities.CustomSpinner
+                    android:id="@+id/spinnerUOM"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_spinner"
+                    android:backgroundTint="@color/pink"
+                    android:dropDownVerticalOffset="@dimen/_10sdp"
+                    android:popupBackground="@color/white"
+                    android:spinnerMode="dropdown"
+                    android:theme="@style/AppTheme" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonAddBarItem"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/buttonReturn"
+                android:fontFamily="@font/montserrat_bold"
+                android:gravity="center"
+                android:text="@string/button_Add"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/commonTextSize" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonViewBarItem"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/buttonCloseOut"
+                android:fontFamily="@font/montserrat_bold"
+                android:gravity="center"
+                android:text="@string/lbl_View"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/commonTextSize" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleviewCombinations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutAnimation="@anim/layout_animation_fall_down"
+        android:scrollbars="vertical" />
+
+    <TextView
+        android:id="@+id/textViewSelectedPack"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/regularTextSize"
+        android:fontFamily="@font/montserrat_regular"
+        android:gravity="center_vertical"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/commonTextSize"
+        android:visibility="gone" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/regularTextSize"
+        android:fontFamily="@font/montserrat_semi_bold"
+        android:gravity="center_vertical"
+        android:text="@string/lbl_CostPricing"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/commonTextSize" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:orientation="horizontal"
+        android:weightSum="8">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/hint_UnitCost"
+            android:textSize="@dimen/commonTextSize"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="1dp"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputUnitCost"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="Price"
+                android:backgroundTint="@color/lighterGrey"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center_vertical"
+                android:imeOptions="actionDone"
+                android:inputType="numberDecimal"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:text="00.00"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:textSize="@dimen/commonTextSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:hint="@string/hint_Margin"
+            android:textSize="@dimen/commonTextSize"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="1dp"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputMargin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="Price"
+                android:backgroundTint="@color/lighterGrey"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center_vertical"
+                android:imeOptions="actionDone"
+                android:inputType="numberDecimal"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:singleLine="true"
+                android:text="00.00"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:textSize="@dimen/commonTextSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:hint="@string/hint_UnitPrice"
+            android:textSize="@dimen/commonTextSize"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="1dp"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputUnitPrice"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="Price"
+                android:backgroundTint="@color/lighterGrey"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center_vertical"
+                android:imeOptions="actionDone"
+                android:inputType="numberDecimal"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:text="00.00"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:textSize="@dimen/commonTextSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:hint="@string/hint_Markup"
+            android:textSize="@dimen/commonTextSize"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="1dp"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputMarkup"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="Price"
+                android:backgroundTint="@color/lighterGrey"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center_vertical"
+                android:imeOptions="actionDone"
+                android:inputType="numberDecimal"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:text="00.00"
+
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:textSize="@dimen/commonTextSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:hint="@string/hint_MinPrice"
+            android:textSize="@dimen/commonTextSize"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="1dp"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputMinPrice"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="Price"
+                android:backgroundTint="@color/lighterGrey"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center_vertical"
+                android:imeOptions="actionDone"
+                android:inputType="numberDecimal"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:text="00.00"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:textSize="@dimen/commonTextSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:hint="@string/hint_SalePrice"
+            android:textSize="@dimen/commonTextSize"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="1dp"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputSalePrice"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="Price"
+                android:backgroundTint="@color/lighterGrey"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center_vertical"
+                android:imeOptions="actionDone"
+                android:inputType="numberDecimal"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:text="00.00"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:textSize="@dimen/commonTextSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:hint="@string/hint_MSRP"
+            android:textSize="@dimen/commonTextSize"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="1dp"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputMSRP"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="Price"
+                android:backgroundTint="@color/lighterGrey"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center_vertical"
+                android:imeOptions="actionDone"
+                android:inputType="numberDecimal"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:text="00.00"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:textSize="@dimen/commonTextSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:hint="@string/hint_BuyDown"
+            android:textSize="@dimen/commonTextSize"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="1dp"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputBuyDown"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="Price"
+                android:backgroundTint="@color/lighterGrey"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center_vertical"
+                android:imeOptions="actionDone"
+                android:inputType="numberDecimal"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:text="00.00"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:textSize="@dimen/commonTextSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:orientation="horizontal"
+        android:weightSum="8">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/regularTextSize"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:gravity="center_vertical"
+                android:text="@string/hint_BuyCase"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/commonTextSize" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal"
+                android:weightSum="6">
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/checkBoxBuyAsCase"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:text="@string/hint_BuyCase"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/commonTextSize"
+                    android:theme="@style/SCBSwitch"
+                    tools:ignore="RtlSymmetry" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:hint="@string/hint_UnitInCase"
+                    android:textSize="@dimen/commonTextSize"
+                    app:boxStrokeColor="@color/black"
+                    app:boxStrokeWidthFocused="1dp"
+                    app:hintTextColor="@color/black">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textInputUnitInCase"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:autofillHints="Price"
+                        android:backgroundTint="@color/lighterGrey"
+                        android:enabled="false"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center_vertical"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:paddingStart="@dimen/_5sdp"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:paddingEnd="@dimen/_5sdp"
+                        android:selectAllOnFocus="true"
+                        android:singleLine="true"
+                        android:text="00"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textCursorDrawable="@drawable/cursor_color"
+                        android:textSize="@dimen/commonTextSize" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:hint="@string/hint_CaseCost"
+                    android:textSize="@dimen/commonTextSize"
+                    app:boxStrokeColor="@color/black"
+                    app:boxStrokeWidthFocused="1dp"
+                    app:hintTextColor="@color/black">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textInputCaseCost"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:autofillHints="Price"
+                        android:backgroundTint="@color/lighterGrey"
+                        android:enabled="false"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center_vertical"
+                        android:imeOptions="actionDone"
+                        android:inputType="numberDecimal"
+                        android:paddingStart="@dimen/_5sdp"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:paddingEnd="@dimen/_5sdp"
+                        android:selectAllOnFocus="true"
+                        android:singleLine="true"
+                        android:text="00.00"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textCursorDrawable="@drawable/cursor_color"
+                        android:textSize="@dimen/commonTextSize" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:hint="@string/hint_CasePrice"
+                    android:textSize="@dimen/commonTextSize"
+                    app:boxStrokeColor="@color/black"
+                    app:boxStrokeWidthFocused="1dp"
+                    app:hintTextColor="@color/black">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textInputCasePrice"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:autofillHints="Price"
+                        android:backgroundTint="@color/lighterGrey"
+                        android:enabled="false"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center_vertical"
+                        android:imeOptions="actionDone"
+                        android:inputType="numberDecimal"
+                        android:paddingStart="@dimen/_5sdp"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:paddingEnd="@dimen/_5sdp"
+                        android:selectAllOnFocus="true"
+                        android:singleLine="true"
+                        android:text="00.00"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textCursorDrawable="@drawable/cursor_color"
+                        android:textSize="@dimen/commonTextSize" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/buttonTax"
+                    android:fontFamily="@font/montserrat_semi_bold"
+                    android:gravity="center"
+                    android:text="@string/lbl_Price"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/commonTextSize" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonPriceView"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/buttonCloseOut"
+                    android:fontFamily="@font/montserrat_semi_bold"
+                    android:gravity="center"
+                    android:text="@string/lbl_View"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/commonTextSize" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/regularTextSize"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:gravity="center_vertical"
+                android:text="@string/Menu_Stock"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/commonTextSize" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal"
+                android:weightSum="6">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:enabled="false"
+                    android:hint="@string/hint_OnHand"
+                    android:textSize="@dimen/commonTextSize"
+                    app:boxStrokeColor="@color/black"
+                    app:boxStrokeWidthFocused="1dp"
+                    app:hintTextColor="@color/black">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textInputOnHand"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/lighterGrey"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center_vertical"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:paddingStart="@dimen/_5sdp"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:paddingEnd="@dimen/_5sdp"
+                        android:selectAllOnFocus="true"
+                        android:singleLine="true"
+                        android:text="00"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textCursorDrawable="@drawable/cursor_color"
+                        android:textSize="@dimen/commonTextSize" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:hint="@string/hint_ReOrder"
+                    android:textSize="@dimen/commonTextSize"
+                    app:boxStrokeColor="@color/black"
+                    app:boxStrokeWidthFocused="1dp"
+                    app:hintTextColor="@color/black">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textInputReOrder"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:autofillHints="Price"
+                        android:backgroundTint="@color/lighterGrey"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center_vertical"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:paddingStart="@dimen/_5sdp"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:paddingEnd="@dimen/_5sdp"
+                        android:selectAllOnFocus="true"
+                        android:singleLine="true"
+                        android:text="00"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textCursorDrawable="@drawable/cursor_color"
+                        android:textSize="@dimen/commonTextSize" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:hint="@string/hint_MinWarnQty"
+                    android:textSize="@dimen/commonTextSize"
+                    app:boxStrokeColor="@color/black"
+                    app:boxStrokeWidthFocused="1dp"
+                    app:hintTextColor="@color/black">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textInputMinWarnQty"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:autofillHints="Price"
+                        android:backgroundTint="@color/lighterGrey"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center_vertical"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:paddingStart="@dimen/_5sdp"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:paddingEnd="@dimen/_5sdp"
+                        android:selectAllOnFocus="true"
+                        android:singleLine="true"
+                        android:text="00"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textCursorDrawable="@drawable/cursor_color"
+                        android:textSize="@dimen/commonTextSize" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonEnter"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/buttonTax"
+                    android:fontFamily="@font/montserrat_semi_bold"
+                    android:gravity="center"
+                    android:text="@string/button_EnterStock"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/commonTextSize" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonStockView"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/buttonCloseOut"
+                    android:fontFamily="@font/montserrat_semi_bold"
+                    android:gravity="center"
+                    android:text="@string/lbl_View"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/commonTextSize" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/regularTextSize"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:gravity="center_vertical"
+                android:text="@string/hint_UPC"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/commonTextSize" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="vertical"
+                android:weightSum="4">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:orientation="vertical">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycleViewUPC"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layoutAnimation="@anim/layout_animation_fall_down"
+                        android:scrollbars="vertical" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/spinnerSize"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/buttonAuto"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:backgroundTint="@color/buttonDiscount"
+                        android:fontFamily="@font/montserrat_semi_bold"
+                        android:gravity="center"
+                        android:text="@string/button_Auto"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/commonTextSize" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/buttonAdd"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_weight="0.5"
+                        android:backgroundTint="@color/buttonReturn"
+                        android:fontFamily="@font/montserrat_semi_bold"
+                        android:gravity="center"
+                        android:text="@string/button_Add"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/commonTextSize" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/regularTextSize"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:fontFamily="@font/montserrat_semi_bold"
+        android:gravity="center_vertical"
+        android:text="@string/lbl_SoldAlongItem"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/commonTextSize" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:orientation="horizontal"
+        android:weightSum="8">
+
+        <AutoCompleteTextView
+            android:id="@+id/textInputSoldAlongSKU"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/regularTextSize"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:background="@drawable/custom_register"
+            android:completionThreshold="1"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center_vertical"
+            android:hint="@string/hint_SearchBy"
+            android:imeOptions="actionDone"
+            android:paddingStart="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_5sdp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textColorHint="@color/lighterGrey"
+            android:textCursorDrawable="@drawable/cursor_color"
+            android:textSize="@dimen/commonTextSize" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="2"
+            android:enabled="false"
+            android:hint="@string/hint_ItemName"
+            android:textSize="@dimen/commonTextSize"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="1dp"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputSoldAlongName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="Price"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:textSize="@dimen/commonTextSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:hint="@string/lbl_Qty"
+            android:textSize="@dimen/commonTextSize"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="1dp"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputSoldAlongQty"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="Price"
+                android:backgroundTint="@color/lighterGrey"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center_vertical"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:text="00"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:textSize="@dimen/commonTextSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/checkBoxMultiplyByPack"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="2"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_5sdp"
+            android:text="@string/lbl_MultiplyByPack"
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize"
+            android:theme="@style/SCBSwitch"
+            tools:ignore="RtlSymmetry" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonAddSoldAlong"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/buttonReturn"
+            android:fontFamily="@font/montserrat_bold"
+            android:gravity="center"
+            android:text="@string/button_Add"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/commonTextSize" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_85sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.6"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/regularTextSize"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:gravity="center_vertical"
+                android:text="@string/lbl_ItemSettings"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/commonTextSize" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/regularTextSize"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/checkBoxNonDiscount"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:text="@string/checkBox_NonDiscount"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/commonTextSize"
+                    android:theme="@style/SCBSwitch"
+                    tools:ignore="RtlSymmetry" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/checkBoxWeightItem"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:text="@string/checkBox_WeightItem"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/commonTextSize"
+                    android:theme="@style/SCBSwitch"
+                    tools:ignore="RtlSymmetry" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/checkBoxWICCheck"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:text="@string/checkBox_WICCheck"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/commonTextSize"
+                    android:theme="@style/SCBSwitch"
+                    tools:ignore="RtlSymmetry" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/regularTextSize"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/checkBoxNonRevenue"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:text="@string/checkBox_NonRevenue"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/commonTextSize"
+                    android:theme="@style/SCBSwitch"
+                    tools:ignore="RtlSymmetry" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/checkBoxDepositItem"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:text="@string/checkBox_DepositItem"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/commonTextSize"
+                    android:theme="@style/SCBSwitch"
+                    tools:ignore="RtlSymmetry" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/checkBoxWebItem"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:text="@string/checkBox_WebItem"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/commonTextSize"
+                    android:theme="@style/SCBSwitch"
+                    tools:ignore="RtlSymmetry" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/regularTextSize"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/checkBoxCountWithNoDisc"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:text="@string/checkBox_CountWithNoDisc"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/commonTextSize"
+                    android:theme="@style/SCBSwitch"
+                    tools:ignore="RtlSymmetry" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/checkBoxNonCountable"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:text="@string/checkBox_NonCountable"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/commonTextSize"
+                    android:theme="@style/SCBSwitch"
+                    tools:ignore="RtlSymmetry" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/checkBoxFoodStamp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:text="@string/checkBox_FoodStamp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/commonTextSize"
+                    android:theme="@style/SCBSwitch"
+                    tools:ignore="RtlSymmetry" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/regularTextSize"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/checkBoxReturnItem"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:text="@string/checkBox_ReturnItem"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/commonTextSize"
+                    android:theme="@style/SCBSwitch"
+                    tools:ignore="RtlSymmetry" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/checkBoxNonPlu"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:text="@string/lbl_NonPLU"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/commonTextSize"
+                    android:theme="@style/SCBSwitch"
+                    tools:ignore="RtlSymmetry" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="0.4">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycleViewSoldAlong"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layoutAnimation="@anim/layout_animation_fall_down"
+                android:scrollbars="vertical" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

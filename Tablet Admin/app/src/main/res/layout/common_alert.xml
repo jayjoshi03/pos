@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?><!-- res/layout/custom_alert_dialog.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/pink"
+        android:fontFamily="@font/montserrat_semi_bold"
+        android:paddingStart="@dimen/_5sdp"
+        android:paddingTop="@dimen/_3sdp"
+        android:paddingEnd="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_3sdp"
+        android:singleLine="true"
+        android:text="Alert!!!"
+        android:textColor="@color/white"
+        android:textSize="@dimen/headerTextSize" />
+
+    <TextView
+        android:id="@+id/messageTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_medium"
+        android:paddingStart="@dimen/_5sdp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingEnd="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_3sdp"
+        android:text="Alert!!!"
+        android:textColor="@color/black"
+        android:textSize="@dimen/commonTextSize" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:gravity="end"
+        android:orientation="horizontal"
+        android:paddingEnd="@dimen/_5sdp"
+        android:weightSum="1">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonOK"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/regularTextSize"
+            android:layout_weight="0.2"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:gravity="center"
+            android:text="@string/lbl_Okay"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize" />
+
+    </LinearLayout>
+
+
+    <!-- Add other views or buttons if needed -->
+
+</LinearLayout>

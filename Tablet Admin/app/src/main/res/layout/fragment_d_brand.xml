@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragmentDialogs.CategoryPopupDialog">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/layoutToolbar"
+            layout="@layout/fragment_d_toolbar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/_10sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:hint="@string/hint_Name"
+                            android:textSize="@dimen/commonTextSize"
+                            app:boxStrokeColor="@color/darkGrey"
+                            app:boxStrokeWidthFocused="1dp"
+                            app:hintTextColor="@color/darkGrey">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/textInputBrandName"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:autofillHints="Name"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:gravity="center_vertical"
+                                android:imeOptions="actionDone"
+                                android:inputType="textCapCharacters"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/darkGrey"
+                                android:textCursorDrawable="@drawable/cursor_color"
+                                android:textSize="@dimen/commonTextSize" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/hint_Manufacturer"
+                            android:textSize="@dimen/commonTextSize"
+                            app:boxStrokeColor="@color/darkGrey"
+                            app:boxStrokeWidthFocused="1dp"
+                            app:hintTextColor="@color/darkGrey">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/textInputManufacturer"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:autofillHints="Name"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:gravity="center_vertical"
+                                android:imeOptions="actionDone"
+                                android:inputType="textCapCharacters"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/darkGrey"
+                                android:textCursorDrawable="@drawable/cursor_color"
+                                android:textSize="@dimen/commonTextSize" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/regularTextSize"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/checkBoxPMUSA"
+                            android:theme="@style/SCBSwitch"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:gravity="center_vertical"
+                            android:text="@string/checkBox_PMUSA"
+                            android:textColor="@color/darkGrey"
+                            android:textSize="@dimen/commonTextSize"
+                            tools:ignore="RtlSymmetry" />
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/checkBoxRJRT"
+                            android:layout_width="0dp"
+                            android:theme="@style/SCBSwitch"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:layout_weight="0.5"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:gravity="center_vertical"
+                            android:text="@string/checkBox_RJRT"
+                            android:textColor="@color/darkGrey"
+                            android:textSize="@dimen/commonTextSize"
+                            tools:ignore="RtlSymmetry" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/regularTextSize"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/checkBoxITG"
+                            android:layout_width="0dp"
+                            android:layout_marginEnd="@dimen/_15sdp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5"
+                            android:theme="@style/SCBSwitch"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:gravity="center_vertical"
+                            android:text="@string/checkBox_ITG"
+                            android:textColor="@color/darkGrey"
+                            android:textSize="@dimen/commonTextSize"
+                            tools:ignore="RtlSymmetry" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonSave"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/regularTextSize"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/montserrat_semi_bold"
+                    android:gravity="center"
+                    android:text="@string/button_Save"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/commonTextSize" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>

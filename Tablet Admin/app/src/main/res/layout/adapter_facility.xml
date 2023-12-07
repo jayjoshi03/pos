@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="facility"
+            type="com.varitas.gokulpos.tablet.response.Facility" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutDetails"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/regularTextSize"
+        android:elevation="@dimen/_4sdp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_5sdp"
+            android:singleLine="true"
+            android:text='@{Integer.toString(pos).length() > 1 ? Integer.toString(pos) : "0"+Integer.toString(pos)}'
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize"
+            tools:ignore="NestedWeights" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_5sdp"
+            android:singleLine="true"
+            android:text='@{facility.name}'
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center"
+            android:paddingStart="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_5sdp"
+            android:singleLine="true"
+            android:text='@{facility.contactName}'
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center"
+            android:paddingStart="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_5sdp"
+            android:singleLine="true"
+            android:text='@{facility.contactNumber}'
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_weight="0.05"
+            android:layout_height="match_parent"/>
+
+        <ImageButton
+            android:id="@+id/imageButtonEdit"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.05"
+            android:contentDescription="edit"
+            android:padding="@dimen/_5sdp"
+            android:backgroundTint="@color/transparent"
+            android:src="@drawable/ic_edit"
+            app:tint="@color/blue" />
+
+        <ImageButton
+            android:id="@+id/imageButtonDelete"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.05"
+            android:contentDescription="delete"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/ic_delete"
+            android:backgroundTint="@color/transparent"
+            app:tint="@color/red" />
+
+    </LinearLayout>
+
+</layout>

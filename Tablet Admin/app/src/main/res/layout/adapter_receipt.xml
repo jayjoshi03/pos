@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.varitas.gokulpos.tablet.utilities.Utils" />
+
+        <import type="android.view.View" />
+
+        <import type="android.content.Context" />
+
+        <variable
+            name="orderDetail"
+            type="com.varitas.gokulpos.tablet.response.AllOrders" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutDetails"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/regularTextSize"
+        android:elevation="@dimen/_4sdp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_5sdp"
+            android:singleLine="true"
+            android:text='@{Integer.toString(pos).length() > 1 ? Integer.toString(pos) : "0"+Integer.toString(pos)}'
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize"
+            tools:ignore="NestedWeights" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_3sdp"
+            android:paddingEnd="@dimen/_3sdp"
+            android:singleLine="true"
+            android:text='@{orderDetail.orderNo ?? ""}'
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center"
+            android:paddingStart="@dimen/_3sdp"
+            android:paddingEnd="@dimen/_3sdp"
+            android:singleLine="true"
+            android:text='@{Utils.INSTANCE.setAmountWithCurrency(context,orderDetail.tax)}'
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center"
+            android:paddingStart="@dimen/_3sdp"
+            android:paddingEnd="@dimen/_3sdp"
+            android:singleLine="true"
+            android:text='@{Utils.INSTANCE.setAmountWithCurrency(context,orderDetail.discountAmount)}'
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center"
+            android:paddingStart="@dimen/_3sdp"
+            android:paddingEnd="@dimen/_3sdp"
+            android:singleLine="true"
+            android:text='@{Utils.INSTANCE.setAmountWithCurrency(context,orderDetail.subTotal)}'
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center_vertical|end"
+            android:paddingStart="@dimen/_3sdp"
+            android:paddingEnd="@dimen/_3sdp"
+            android:singleLine="true"
+            android:text='@{Utils.INSTANCE.setAmountWithCurrency(context,orderDetail.totalIncTax)}'
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize"
+            tools:ignore="NestedWeights" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center_vertical|end"
+            android:paddingStart="@dimen/_3sdp"
+            android:paddingEnd="@dimen/_3sdp"
+            android:singleLine="true"
+            android:text='@{orderDetail.sStatus ?? ""}'
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize"
+            tools:ignore="NestedWeights" />
+
+        <ImageButton
+            android:id="@+id/textViewPrint"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.05"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="delete"
+            android:padding="@dimen/_3sdp"
+            android:src="@drawable/ic_print"
+            app:tint="@color/buttonTax" />
+
+    </LinearLayout>
+</layout>

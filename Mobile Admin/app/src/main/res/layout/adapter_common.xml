@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.varitas.gokulpos.R" />
+
+        <variable
+            name="data"
+            type="com.varitas.gokulpos.response.Department" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+        <variable
+            name="category"
+            type="com.varitas.gokulpos.response.Category" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutDetails"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/inputSize"
+        android:elevation="@dimen/_4sdp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:text='@{Integer.toString(pos).length() > 1 ? Integer.toString(pos) : "0"+Integer.toString(pos)}'
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize"
+            tools:ignore="NestedWeights" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:text='@{data != null ? data.name : category.name}'
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/textViewItemCount"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:backgroundTint="@color/lighterGrey"
+            android:contentDescription="ItemCount"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center_vertical"
+            android:text='@{data != null ? Integer.toString(data.itemCount).length() > 1 ? Integer.toString(data.itemCount) : "0"+Integer.toString(data.itemCount) : Integer.toString(category.itemCount).length() > 1 ? Integer.toString(category.itemCount) : "0"+Integer.toString(category.itemCount)}'
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize" />
+
+    </LinearLayout>
+
+</layout>

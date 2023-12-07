@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="group"
+            type="com.varitas.gokulpos.response.Group" />
+
+    </data>
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/checkBoxTaxSelector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:buttonTint="@color/pink"
+        android:checked='@{group.isGroup}'
+        android:singleLine="true"
+        android:elevation="@dimen/_4sdp"
+        android:fontFamily="@font/montserrat_regular"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/_5sdp"
+        android:text='@{group.name ?? ""}'
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSize"
+        tools:ignore="RtlSymmetry" />
+
+</layout>

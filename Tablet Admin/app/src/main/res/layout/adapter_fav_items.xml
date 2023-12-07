@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="name"
+            type="String" />
+    </data>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonFavItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/montserrat_medium"
+        android:gravity="center"
+        android:minHeight="@dimen/spinnerSize"
+        android:padding="@dimen/_2sdp"
+        android:text='@{name}'
+        android:textColor="@color/black"
+        android:textSize="@dimen/commonTextSize"
+        tools:text="@tools:sample/full_names" />
+
+
+</layout>

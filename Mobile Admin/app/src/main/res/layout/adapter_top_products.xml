@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="product"
+            type="com.varitas.gokulpos.response.TopSellingItems" />
+
+        <variable
+            name="upc"
+            type="com.varitas.gokulpos.response.UPC" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutDetails"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/customerName"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:background="@color/white"
+        android:elevation="@dimen/_8sdp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.8"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_8sdp"
+            android:text="@{product != null ? product.productName : upc.barcode}"
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/commonTextSize" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_8sdp"
+            android:text='@{product != null ? (Long.toString(product.quantity).length() > 1) ? Long.toString(product.quantity) : "0"+product.quantity : ""}'
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/commonTextSize"
+            android:visibility='@{upc != null ? View.GONE : View.VISIBLE}' />
+
+        <ImageView
+            android:id="@+id/imageViewDeleteUPC"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:padding="@dimen/_3sdp"
+            android:src="@drawable/ic_delete"
+            android:visibility='@{upc != null ? View.VISIBLE : View.GONE}'
+            app:tint="@color/darkGrey"
+            tools:ignore="NestedWeights" />
+
+    </LinearLayout>
+
+</layout>

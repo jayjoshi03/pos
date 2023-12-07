@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/layoutToolbar"
+        layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/regularTextSize"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center_vertical"
+            android:text="@string/lbl_TransactionType"
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize" />
+
+        <RadioGroup
+            android:id="@+id/groupPaidOut"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/regularTextSize"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:checkedButton="@id/radioAdjustment"
+            android:orientation="horizontal">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radioAdjustment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/montserrat_regular"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:text="@string/lbl_Adjustment"
+                android:textColor="@color/black"
+                android:textSize="@dimen/commonTextSize" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radioLoan"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:fontFamily="@font/montserrat_regular"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:text="@string/lbl_Loan"
+                android:textColor="@color/black"
+                android:textSize="@dimen/commonTextSize" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radioDrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:fontFamily="@font/montserrat_regular"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:text="@string/lbl_Drop"
+                android:textColor="@color/black"
+                android:textSize="@dimen/commonTextSize" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radioPaidOut"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:fontFamily="@font/montserrat_regular"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:text="@string/lbl_PaidOut"
+                android:textColor="@color/black"
+                android:textSize="@dimen/commonTextSize" />
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25"
+                android:hint="@string/lbl_Amount"
+                android:textSize="@dimen/commonTextSize"
+                app:boxStrokeColor="@color/darkGrey"
+                app:boxStrokeWidthFocused="1dp"
+                app:hintTextColor="@color/darkGrey">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:autofillHints="Name"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center_vertical"
+                    android:imeOptions="actionDone"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/darkGrey"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:textSize="@dimen/commonTextSize" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="0.5"
+                android:hint="@string/lbl_Reason"
+                android:textSize="@dimen/commonTextSize"
+                app:boxStrokeColor="@color/darkGrey"
+                app:boxStrokeWidthFocused="1dp"
+                app:hintTextColor="@color/darkGrey">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputReason"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:autofillHints="Name"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center_vertical"
+                    android:imeOptions="actionDone"
+                    android:inputType="textCapCharacters"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/darkGrey"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:textSize="@dimen/commonTextSize" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonSave"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/regularTextSize"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="0.25"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:gravity="center"
+                android:text="@string/button_Update"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="@dimen/commonTextSize" />
+
+        </LinearLayout>
+
+        <include
+            android:id="@+id/layoutHeader"
+            layout="@layout/adapter_header" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycleViewDrawer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_7sdp"
+            android:layout_marginEnd="@dimen/_7sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layoutAnimation="@anim/layout_animation_fall_down"
+            android:scrollbars="vertical"
+            app:fastScrollEnabled="true"
+            app:fastScrollHorizontalThumbDrawable="@drawable/thumb_drawable"
+            app:fastScrollHorizontalTrackDrawable="@drawable/line_drawable"
+            app:fastScrollVerticalThumbDrawable="@drawable/thumb_drawable"
+            app:fastScrollVerticalTrackDrawable="@drawable/line_drawable" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

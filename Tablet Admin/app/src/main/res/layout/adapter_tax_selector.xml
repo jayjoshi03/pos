@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="group"
+            type="com.varitas.gokulpos.tablet.model.SelectedGroups" />
+    </data>
+
+    <CheckBox
+        android:id="@+id/checkBoxTaxSelector"
+        android:layout_width="match_parent"
+        android:button="@drawable/selector_check"
+        android:layout_height="@dimen/regularTextSize"
+        android:checked='@{group.isGroup}'
+        android:singleLine="true"
+        android:buttonTint="@color/pink"
+        android:elevation="@dimen/_4sdp"
+        android:fontFamily="@font/montserrat_regular"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/_5sdp"
+        android:text='@{group.name ?? ""}'
+        android:textColor="@color/black"
+        android:textSize="@dimen/commonTextSize" />
+
+</layout>

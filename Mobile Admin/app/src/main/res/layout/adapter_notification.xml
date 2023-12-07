@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="notification"
+            type="com.varitas.gokulpos.response.Notifications" />
+    </data>
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switchNotification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:checked='@{notification.active}'
+        android:fontFamily="@font/montserrat_regular"
+        android:text='@{notification.name ?? ""}'
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSize"
+        android:theme="@style/SCBSwitch" />
+</layout>

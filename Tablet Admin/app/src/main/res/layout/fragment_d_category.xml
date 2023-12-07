@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragmentDialogs.CategoryPopupDialog">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/layoutToolbar"
+            layout="@layout/fragment_d_toolbar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_10sdp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_Name"
+                    android:textSize="@dimen/commonTextSize"
+                    app:boxStrokeColor="@color/darkGrey"
+                    app:boxStrokeWidthFocused="1dp"
+                    app:hintTextColor="@color/darkGrey">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:autofillHints="Name"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center_vertical"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapCharacters"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/darkGrey"
+                        android:textCursorDrawable="@drawable/cursor_color"
+                        android:textSize="@dimen/commonTextSize" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/regularTextSize"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/spinner_layout"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.varitas.gokulpos.tablet.utilities.CustomSpinner
+                            android:id="@+id/spinnerParentCategory"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_spinner"
+                            android:backgroundTint="@color/pink"
+                            android:contentDescription="Category_spinner"
+                            android:dropDownVerticalOffset="@dimen/_10sdp"
+                            android:popupBackground="@color/white"
+                            android:spinnerMode="dropdown"
+                            android:theme="@style/AppTheme" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/spinner_layout"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.varitas.gokulpos.tablet.utilities.CustomSpinner
+                            android:id="@+id/spinnerDepartment"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_spinner"
+                            android:backgroundTint="@color/pink"
+                            android:contentDescription="Category_spinner"
+                            android:dropDownVerticalOffset="@dimen/_10sdp"
+                            android:popupBackground="@color/white"
+                            android:spinnerMode="dropdown"
+                            android:theme="@style/AppTheme" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/regularTextSize"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:theme="@style/SCBSwitch"
+                        android:id="@+id/checkBoxNonStock"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center_vertical"
+                        android:text="@string/checkBox_NonStock"
+                        android:textColor="@color/darkGrey"
+                        android:textSize="@dimen/commonTextSize"
+                        tools:ignore="RtlSymmetry" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:theme="@style/SCBSwitch"
+                        android:id="@+id/checkBoxWebItem"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_weight="0.5"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center_vertical"
+                        android:text="@string/checkBox_WebItem"
+                        android:textColor="@color/darkGrey"
+                        android:textSize="@dimen/commonTextSize"
+                        tools:ignore="RtlSymmetry" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/regularTextSize"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:theme="@style/SCBSwitch"
+                        android:id="@+id/checkBoxWICCheck"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center_vertical"
+                        android:text="@string/checkBox_WICCheck"
+                        android:textColor="@color/darkGrey"
+                        android:textSize="@dimen/commonTextSize"
+                        tools:ignore="RtlSymmetry" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:theme="@style/SCBSwitch"
+                        android:id="@+id/checkBoxNonDiscount"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_weight="0.5"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center_vertical"
+                        android:text="@string/checkBox_NonDiscount"
+                        android:textColor="@color/darkGrey"
+                        android:textSize="@dimen/commonTextSize"
+                        tools:ignore="RtlSymmetry" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/regularTextSize"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:theme="@style/SCBSwitch"
+                        android:id="@+id/checkBoxNonCountable"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center_vertical"
+                        android:text="@string/checkBox_NonCountable"
+                        android:textColor="@color/darkGrey"
+                        android:textSize="@dimen/commonTextSize"
+                        tools:ignore="RtlSymmetry" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:theme="@style/SCBSwitch"
+                        android:id="@+id/checkBoxWeightItem"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_weight="0.5"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center_vertical"
+                        android:text="@string/checkBox_WeightItem"
+                        android:textColor="@color/darkGrey"
+                        android:textSize="@dimen/commonTextSize"
+                        tools:ignore="RtlSymmetry" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/regularTextSize"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:theme="@style/SCBSwitch"
+                        android:id="@+id/checkBoxFoodStamp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center_vertical"
+                        android:text="@string/checkBox_FoodStamp"
+                        android:textColor="@color/darkGrey"
+                        android:textSize="@dimen/commonTextSize"
+                        tools:ignore="RtlSymmetry" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:theme="@style/SCBSwitch"
+                        android:id="@+id/checkBoxNonRevenue"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_weight="0.5"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center_vertical"
+                        android:text="@string/checkBox_NonRevenue"
+                        android:textColor="@color/darkGrey"
+                        android:textSize="@dimen/commonTextSize"
+                        tools:ignore="RtlSymmetry" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/regularTextSize"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:theme="@style/SCBSwitch"
+                        android:id="@+id/checkBoxAddBrand"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center_vertical"
+                        android:text="@string/checkBox_AddBrand"
+                        android:textColor="@color/darkGrey"
+                        android:textSize="@dimen/commonTextSize"
+                        tools:ignore="RtlSymmetry" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutBrand"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/spinner_layout"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="invisible">
+
+                        <com.varitas.gokulpos.tablet.utilities.CustomSpinner
+                            android:id="@+id/spinnerBrand"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_spinner"
+                            android:backgroundTint="@color/pink"
+                            android:contentDescription="Brand_Spinner"
+                            android:dropDownVerticalOffset="@dimen/_10sdp"
+                            android:popupBackground="@color/white"
+                            android:spinnerMode="dropdown"
+                            android:theme="@style/AppTheme" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonSave"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/regularTextSize"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/montserrat_semi_bold"
+                    android:gravity="center"
+                    android:text="@string/button_Save"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/commonTextSize" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </LinearLayout>
+
+</LinearLayout>

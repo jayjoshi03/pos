@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.varitas.gokulpos">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- Allow opening windows to use the system user interface -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- Allow read and write access to the "properties" table in the check in database, the value can be modified and uploaded -->
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="com.varitas.gokulpos.tablet.activity.MainApp"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.Main"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+
+        <meta-data
+            android:name="firebase_performance_logcat_enabled"
+            android:value="true" />
+
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.SplashActivity"
+            android:exported="true"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            tools:ignore="LockedOrientationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--region MainActivity-->
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.MainActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" /><!--endregion-->
+
+        <!--region LoginActivity-->
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.LoginActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" /><!--endregion-->
+
+        <!--region DashboardActivity-->
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.DashboardActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" /><!--endregion-->
+
+        <!--region DepartmentActivity-->
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.DepartmentActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" /><!--endregion-->
+
+        <!--region CategoryActivity-->
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.CategoryActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" /><!--endregion-->
+
+        <!--region AddProductActivity-->
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.AddProductActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" /><!--endregion-->
+
+        <!--region ProductListActivity-->
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.ProductListActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" /><!--endregion-->
+
+        <!--region CustomerListActivity-->
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.CustomersActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" /><!--endregion-->
+
+        <!--region EmployeesActivity-->
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.EmployeesActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" /><!--endregion-->
+
+
+        <!-- region MenuActivity -->
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.MenuActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" /> <!-- endregion -->
+
+        <!--region EditProductActivity-->
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.EditProductActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" /><!--endregion-->
+
+        <!-- region BarcodeActivity -->
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.BarcodeActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" /> <!-- endregion -->
+
+        <!-- region BrandActivity -->
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.BrandActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" /> <!-- endregion -->
+
+        <!-- region TaxActivity -->
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.TaxActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" /> <!-- endregion -->
+
+        <!-- region GroupActivity -->
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.GroupActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" /> <!-- endregion -->
+
+        <!-- region SpecificationActivity -->
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.SpecificationActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" /> <!-- endregion -->
+
+        <!-- region FacilityActivity -->
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.FacilityActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" /> <!-- endregion -->
+
+        <!-- region UOMActivity -->
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.UOMActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" /><!-- endregion -->
+
+        <!-- region FacilityActivity -->
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.VendorActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" /><!-- endregion -->
+
+        <!-- region OrderActivity -->
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.OrderActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" /><!-- endregion -->
+
+        <!-- region DrawerActivity -->
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.DrawerActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" /> <!-- endregion -->
+
+        <!-- region PurchaseOrderActivity -->
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.PurchaseOrderActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" /> <!-- endregion -->
+        <!-- region TenderActivity -->
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.TenderActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" /> <!-- endregion -->
+
+        <!-- region SalesPromotionActivity -->
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.SalesPromotionActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" /> <!-- endregion -->
+
+        <!-- region RoleActivity -->
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.RoleActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" /> <!-- endregion -->
+
+        <!-- region SalesPromotionAdd -->
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.PromotionAddActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" /> <!-- endregion -->
+        <!-- region AddPurchaseOrder -->
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.AddPurchaseOrderActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" /> <!-- endregion -->
+        <!-- region AddPurchaseOrder -->
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.ReceiptActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" /> <!-- endregion -->
+        <!-- region GroupDetailActivity -->
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.GroupDetailActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" /> <!-- endregion -->
+        <!-- region GroupDetailActivity -->
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.StoreActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" /> <!-- endregion -->
+        <!-- region ReportActivity -->
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.ReportActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" /> <!-- endregion -->
+        <!-- region InvoiceActivity -->
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.InvoiceActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" /> <!-- endregion -->
+        <!-- region AddInvoiceActivity -->
+        <activity
+            android:name="com.varitas.gokulpos.tablet.activity.AddInvoiceActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.MaterialComponents"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" /> <!-- endregion -->
+
+        <!--region SellerFirebaseService-->
+        <service
+            android:name="com.varitas.gokulpos.tablet.services.SellerFirebaseService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <!--endregion-->
+
+    </application>
+
+</manifest>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="com.varitas.gokulpos.tablet.utilities.Utils" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.varitas.gokulpos.tablet.response.ItemCartDetail" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/_4sdp"
+            android:orientation="horizontal"
+            android:minHeight="@dimen/regularTextSize"
+            android:paddingStart="@dimen/_2sdp"
+            android:paddingEnd="@dimen/_2sdp"
+            android:weightSum="1">
+
+            <RadioButton
+                android:id="@+id/radioButtonIsSelect"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.15"
+                android:button="@drawable/selector_check"
+                android:buttonTint="@color/pink"
+                android:checked="false"
+                android:fontFamily="@font/montserrat_regular"
+                android:gravity="center"
+                android:text='@{data.sku ?? ""}'
+                android:textColor='@{data.quantity > 0 ? @color/black : @color/red}'
+                android:textSize="@dimen/commonTextSize" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.35"
+                android:fontFamily="@font/montserrat_regular"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/_3sdp"
+                android:paddingEnd="@dimen/_3sdp"
+                android:text='@{data.name ?? ""}'
+                android:textColor='@{data.quantity > 0 ? (data.isAgeVerification ? @color/buttonTax : @color/black) : @color/red}'
+                android:textSize="@dimen/commonTextSize" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonQuantity"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:gravity="center"
+                android:paddingStart="@dimen/_3sdp"
+                android:elevation="@dimen/_2sdp"
+                android:paddingEnd="@dimen/_3sdp"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:layout_marginEnd="@dimen/_3sdp"
+                android:singleLine="true"
+                android:backgroundTint="@color/darkGrey"
+                android:text='@{Integer.toString(data.quantity).length() > 1 ? Integer.toString(data.quantity) : "0" + Integer.toString(data.quantity)}'
+                android:textColor="@color/white"
+                android:textSize="@dimen/commonTextSize" />
+
+            <TextView
+                android:id="@+id/textViewPrice"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.15"
+                android:fontFamily="@font/montserrat_regular"
+                android:gravity="center"
+                android:paddingStart="@dimen/_3sdp"
+                android:paddingEnd="@dimen/_3sdp"
+                android:singleLine="true"
+                android:text='@{Utils.INSTANCE.getTwoDecimalValue(data.price)}'
+                android:textColor='@{data.quantity > 0 ? @color/black : @color/red}'
+                android:textSize="@dimen/commonTextSize" />
+
+            <TextView
+                android:id="@+id/textViewAmount"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.15"
+                android:fontFamily="@font/montserrat_regular"
+                android:gravity="center"
+                android:paddingStart="@dimen/_3sdp"
+                android:paddingEnd="@dimen/_3sdp"
+                android:singleLine="true"
+                android:text='@{Utils.INSTANCE.getTwoDecimalValue(data.priceTotal)}'
+                android:textColor='@{data.quantity > 0 ? @color/black : @color/red}'
+                android:textSize="@dimen/commonTextSize" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"
+                android:fontFamily="@font/montserrat_regular"
+                android:gravity="center"
+                android:paddingStart="@dimen/_3sdp"
+                android:paddingEnd="@dimen/_3sdp"
+                android:singleLine="true"
+                android:text='@{data.itemTax}'
+                android:textColor='@{data.quantity > 0 ? @color/black : @color/red}'
+                android:textSize="@dimen/commonTextSize" />
+
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/darkGrey"/>
+
+    </LinearLayout>
+
+
+</layout>

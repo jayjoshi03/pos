@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragmentDialogs.CategoryPopupDialog">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/layoutToolbar"
+            layout="@layout/fragment_d_toolbar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/hint_Name"
+                    android:textSize="@dimen/textSize"
+                    app:boxStrokeColor="@color/darkGrey"
+                    app:boxStrokeWidthFocused="1dp"
+                    app:hintTextColor="@color/darkGrey">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textInputName"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:autofillHints="Name"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center_vertical"
+                        style="@style/textCapture"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/darkGrey"
+                        android:textCursorDrawable="@drawable/cursor_color"
+                        android:textSize="@dimen/textSize" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/lbl_Code"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textSize="@dimen/textSize"
+                    app:boxStrokeColor="@color/darkGrey"
+                    app:boxStrokeWidthFocused="1dp"
+                    app:hintTextColor="@color/darkGrey">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textInputCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:autofillHints="Name"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center_vertical"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapCharacters"
+                        android:digits="0123456789QWERTYUIOPASDFGHJKLZXCVBNM"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/darkGrey"
+                        android:textCursorDrawable="@drawable/cursor_color"
+                        android:textSize="@dimen/textSize" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/lbl_CompanyName"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textSize="@dimen/textSize"
+                    app:boxStrokeColor="@color/darkGrey"
+                    app:boxStrokeWidthFocused="1dp"
+                    app:hintTextColor="@color/darkGrey">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textInputCompanyName"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:autofillHints="Name"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center_vertical"
+                        style="@style/textCapture"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/darkGrey"
+                        android:textCursorDrawable="@drawable/cursor_color"
+                        android:textSize="@dimen/textSize" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/lbl_PersonName"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textSize="@dimen/textSize"
+                    app:boxStrokeColor="@color/darkGrey"
+                    app:boxStrokeWidthFocused="1dp"
+                    app:hintTextColor="@color/darkGrey">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textInputPersonName"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:autofillHints="Name"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center_vertical"
+                        style="@style/textCapture"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/darkGrey"
+                        android:textCursorDrawable="@drawable/cursor_color"
+                        android:textSize="@dimen/textSize" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/inputSize"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/spinner_layout"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.varitas.gokulpos.utilities.CustomSpinner
+                        android:id="@+id/spinnerTaxGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_spinner"
+                        android:backgroundTint="@color/pink"
+                        android:dropDownVerticalOffset="@dimen/_14sdp"
+                        android:popupBackground="@color/white"
+                        android:spinnerMode="dropdown"
+                        android:theme="@style/AppTheme" />
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/lbl_PhoneNumber"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textSize="@dimen/textSize"
+                    app:boxStrokeColor="@color/darkGrey"
+                    app:boxStrokeWidthFocused="1dp"
+                    app:hintTextColor="@color/darkGrey">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textInputPhoneNum"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:autofillHints="Name"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center_vertical"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/darkGrey"
+                        android:textCursorDrawable="@drawable/cursor_color"
+                        android:textSize="@dimen/textSize" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/lbl_EmailId"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textSize="@dimen/textSize"
+                    app:boxStrokeColor="@color/darkGrey"
+                    app:boxStrokeWidthFocused="1dp"
+                    app:hintTextColor="@color/darkGrey">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textInputEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:autofillHints="Name"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center_vertical"
+                        android:imeOptions="actionDone"
+                        android:inputType="textEmailAddress"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/darkGrey"
+                        android:textCursorDrawable="@drawable/cursor_color"
+                        android:textSize="@dimen/textSize" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonSave"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/inputSize"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/button_clicked"
+                android:fontFamily="@font/montserrat_bold"
+                android:gravity="center"
+                android:text="@string/button_Save"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15sdp" />
+
+        </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>

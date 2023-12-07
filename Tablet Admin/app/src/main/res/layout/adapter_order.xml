@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.varitas.gokulpos.tablet.utilities.Utils" />
+        <import type="android.view.View" />
+        <import type="android.content.Context" />
+
+        <variable
+            name="order"
+            type="com.varitas.gokulpos.tablet.response.OrderList" />
+
+        <variable
+            name="returnOrder"
+            type="com.varitas.gokulpos.tablet.response.CompletedOrder" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutDetails"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/regularTextSize"
+        android:elevation="@dimen/_4sdp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_3sdp"
+            android:paddingEnd="@dimen/_3sdp"
+            android:singleLine="true"
+            android:text='@{order != null ? order.orderNo : returnOrder.orderNo}'
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize"
+            tools:ignore="NestedWeights" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_3sdp"
+            android:paddingEnd="@dimen/_3sdp"
+            android:singleLine="true"
+            android:text='@{order != null ? order.date : returnOrder.date}'
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_3sdp"
+            android:paddingEnd="@dimen/_3sdp"
+            android:singleLine="true"
+            android:text='@{order != null ? order.customerName : returnOrder.customerName}'
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center_vertical|end"
+            android:paddingStart="@dimen/_3sdp"
+            android:paddingEnd="@dimen/_3sdp"
+            android:singleLine="true"
+            android:text='@{Utils.INSTANCE.setAmountWithCurrency(context,order != null ? order.totalIncTax : returnOrder.totalIncTax)}'
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:gravity="center"
+            android:layout_weight="0.25">
+
+            <ImageButton
+                android:id="@+id/textViewSave"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:contentDescription="edit"
+                android:padding="@dimen/_3sdp"
+                android:visibility='@{order != null ? View.VISIBLE : View.GONE}'
+                android:backgroundTint="@color/transparent"
+                android:src="@drawable/ic_save"
+                app:tint="@color/green" />
+
+            <ImageButton
+                android:id="@+id/textViewPrint"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:contentDescription="delete"
+                android:padding="@dimen/_3sdp"
+                android:src="@drawable/ic_print"
+                android:backgroundTint="@color/transparent"
+                app:tint="@color/buttonTax" />
+
+            <ImageButton
+                android:id="@+id/textViewLoad"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:contentDescription="delete"
+                android:padding="@dimen/_3sdp"
+                android:src="@drawable/ic_load"
+                android:visibility='@{order != null ? View.VISIBLE : View.GONE}'
+                android:backgroundTint="@color/transparent"
+                app:tint="@color/buttonCloseOut" />
+
+            <ImageButton
+                android:id="@+id/textViewItems"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:contentDescription="delete"
+                android:padding="@dimen/_3sdp"
+                android:src="@drawable/ic_select"
+                android:backgroundTint="@color/transparent"
+                app:tint="@color/blue" />
+
+            <ImageButton
+                android:id="@+id/imageViewDelete"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:contentDescription="delete"
+                android:visibility='@{order != null ? View.VISIBLE : View.GONE}'
+                android:padding="@dimen/_3sdp"
+                android:src="@drawable/ic_delete"
+                android:backgroundTint="@color/transparent"
+                app:tint="@color/red" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

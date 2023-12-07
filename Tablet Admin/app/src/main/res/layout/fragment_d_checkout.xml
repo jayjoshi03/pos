@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/regularTextSize"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.25"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="@string/lbl_SubTotal"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/commonTextSize" />
+
+
+                    <TextView
+                        android:id="@+id/textViewSubTotal"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.25"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:gravity="center_vertical|end"
+                        android:paddingEnd="@dimen/_3sdp"
+                        android:singleLine="true"
+                        android:textColor="@color/darkGrey"
+                        android:textSize="@dimen/commonTextSize" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_weight="0.25"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="@string/lbl_Savings"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/commonTextSize" />
+
+                    <TextView
+                        android:id="@+id/textViewAddOn"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.25"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:gravity="center_vertical|end"
+                        android:paddingEnd="@dimen/_3sdp"
+                        android:singleLine="true"
+                        android:textColor="@color/darkGrey"
+                        android:textSize="@dimen/commonTextSize" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/regularTextSize"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.25"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="@string/lbl_TotalTax"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/commonTextSize" />
+
+
+                    <TextView
+                        android:id="@+id/textViewTotalTax"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.25"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:gravity="center_vertical|end"
+                        android:paddingEnd="@dimen/_3sdp"
+                        android:singleLine="true"
+                        android:textColor="@color/darkGrey"
+                        android:textSize="@dimen/commonTextSize" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_weight="0.25"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="@string/lbl_Quantity"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/commonTextSize" />
+
+                    <TextView
+                        android:id="@+id/textViewQuantity"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.25"
+                        android:background="@color/buttonReceipt"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:gravity="center_vertical|end"
+                        android:paddingEnd="@dimen/_3sdp"
+                        android:singleLine="true"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/commonTextSize" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/regularTextSize"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.25"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="@string/lbl_FoodStampTotal"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/commonTextSize" />
+
+
+                    <TextView
+                        android:id="@+id/textViewFoodStamp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.25"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:gravity="center_vertical|end"
+                        android:paddingEnd="@dimen/_3sdp"
+                        android:singleLine="true"
+                        android:textColor="@color/darkGrey"
+                        android:textSize="@dimen/commonTextSize" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_weight="0.25"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="@string/lbl_NetPayable"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/commonTextSize" />
+
+                    <TextView
+                        android:id="@+id/textViewNetPayable"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.25"
+                        android:background="@color/green"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:gravity="center_vertical|end"
+                        android:paddingEnd="@dimen/_3sdp"
+                        android:singleLine="true"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/commonTextSize" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/regularTextSize"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.25"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="@string/lbl_GrossTotal"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/commonTextSize" />
+
+
+                    <TextView
+                        android:id="@+id/textViewGrossTotal"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.25"
+                        android:background="@color/darkGrey"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:gravity="center_vertical|end"
+                        android:paddingEnd="@dimen/_3sdp"
+                        android:singleLine="true"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/commonTextSize" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_weight="0.25"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="@string/lbl_ChangeDueTotal"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/commonTextSize" />
+
+                    <TextView
+                        android:id="@+id/textViewDue"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.25"
+                        android:background="@color/buttonTax"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:gravity="center_vertical|end"
+                        android:paddingEnd="@dimen/_3sdp"
+                        android:singleLine="true"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/commonTextSize" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <RadioGroup
+                        android:id="@+id/groupTender"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/regularTextSize"
+                        android:checkedButton="@id/radioCash"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/radioCash"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.8"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingEnd="@dimen/_5sdp"
+                            android:text="@string/lbl_Cash"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/commonTextSize" />
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/radioCard"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_weight="0.8"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingEnd="@dimen/_5sdp"
+                            android:text="@string/lbl_Card"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/commonTextSize" />
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/radioFoodStamp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_weight="1.4"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingEnd="@dimen/_5sdp"
+                            android:text="@string/lbl_FoodStamp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/commonTextSize" />
+
+                    </RadioGroup>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:hint="@string/lbl_Total"
+                            android:textSize="@dimen/regularTextSize"
+                            app:boxStrokeColor="@color/darkGrey"
+                            app:boxStrokeWidthFocused="1dp"
+                            app:hintTextColor="@color/darkGrey">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/textInputCheckOut"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:autofillHints="Price"
+                                android:fontFamily="@font/montserrat_regular"
+                                android:gravity="center_vertical"
+                                android:imeOptions="actionDone"
+                                android:inputType="numberDecimal"
+                                android:selectAllOnFocus="true"
+                                android:paddingStart="@dimen/_5sdp"
+                                android:paddingTop="@dimen/_5ssp"
+                                android:paddingEnd="@dimen/_5sdp"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/black"
+                                android:textCursorDrawable="@drawable/cursor_color"
+                                android:textSize="@dimen/commonTextSize" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/buttonAdd"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_weight="0.33"
+                            android:backgroundTint="@color/buttonCloseOut"
+                            android:fontFamily="@font/montserrat_semi_bold"
+                            android:gravity="center"
+                            android:text="@string/button_Add"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/commonTextSize" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_70sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/regularTextSize"
+                        android:background="@color/darkGrey"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/regularTextSize"
+                            android:layout_weight="0.6"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:gravity="center_vertical"
+                            android:paddingStart="@dimen/_15sdp"
+                            android:singleLine="true"
+                            android:text="@string/lbl_TenderName"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/commonTextSize" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/regularTextSize"
+                            android:layout_weight="0.4"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:gravity="center_vertical|end"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingEnd="@dimen/_15sdp"
+                            android:singleLine="true"
+                            android:text="@string/lbl_Amount"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/commonTextSize" />
+
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycleViewPayment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layoutAnimation="@anim/layout_animation_fall_down"
+                        android:scrollbars="vertical" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/spinnerSize"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="end"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_weight="0.25"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:text="@string/lbl_TotalPayAmount"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/commonTextSize" />
+
+                <TextView
+                    android:id="@+id/textViewPaymentAmount"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.25"
+                    android:background="@color/buttonTax"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:gravity="center"
+                    android:paddingEnd="@dimen/_3sdp"
+                    android:singleLine="true"
+                    android:text="@string/lbl_Paid"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/headerTextSize" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonSave"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_weight="0.33"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/buttonReturn"
+                    android:fontFamily="@font/montserrat_semi_bold"
+                    android:gravity="center"
+                    android:text="@string/button_Save"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/commonTextSize" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+</layout>

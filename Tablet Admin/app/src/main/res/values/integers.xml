@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="duration">100</integer>
+    <integer name="duration_dialog">100</integer>
+    <integer name="fragmentWidth">1550</integer>
+    <integer name="fragmentHeight">1250</integer>
+    <integer name="fragmentInWidth">1800</integer>
+    <integer name="receiptHeight">1000</integer>
+</resources>

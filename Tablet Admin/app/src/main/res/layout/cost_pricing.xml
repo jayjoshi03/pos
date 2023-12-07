@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="@dimen/_5sdp"
+    android:layout_marginTop="@dimen/_5sdp"
+    android:layout_marginEnd="@dimen/_5sdp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/regularTextSize"
+        android:fontFamily="@font/montserrat_bold"
+        android:gravity="center_vertical"
+        android:text="@string/lbl_CostPricing"
+        android:textColor="@color/black"
+        android:textSize="@dimen/headerTextSize" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/black" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:hint="@string/hint_UnitCost"
+            android:textColorHint="@color/black"
+            android:textSize="@dimen/commonTextSize"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputUnitCost"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="Price"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center_vertical"
+                android:imeOptions="actionDone"
+                android:inputType="numberDecimal"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5ssp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:textSize="@dimen/commonTextSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="0.5"
+            android:hint="@string/hint_UnitPrice"
+            android:textColorHint="@color/black"
+            android:textSize="@dimen/commonTextSize"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputUnitPrice"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="Price"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center_vertical"
+                android:imeOptions="actionDone"
+                android:inputType="numberDecimal"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5ssp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:textSize="@dimen/commonTextSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:enabled="false"
+            android:hint="@string/hint_Margin"
+            android:textColorHint="@color/black"
+            android:textSize="@dimen/commonTextSize"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputMargin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="Price"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center_vertical"
+                android:imeOptions="actionDone"
+                android:inputType="numberDecimal"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5ssp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:textSize="@dimen/commonTextSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="0.5"
+            android:enabled="false"
+            android:hint="@string/hint_Markup"
+            android:textColorHint="@color/black"
+            android:textSize="@dimen/commonTextSize"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputMarkup"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="Price"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center_vertical"
+                android:imeOptions="actionDone"
+                android:inputType="numberDecimal"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5ssp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:textSize="@dimen/commonTextSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:hint="@string/hint_MinPrice"
+            android:textColorHint="@color/black"
+            android:textSize="@dimen/commonTextSize"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputMinPrice"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="Price"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center_vertical"
+                android:imeOptions="actionDone"
+                android:inputType="numberDecimal"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5ssp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:textSize="@dimen/commonTextSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="0.5"
+            android:hint="@string/hint_SalePrice"
+            android:textColorHint="@color/black"
+            android:textSize="@dimen/commonTextSize"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputSalePrice"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="Price"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center_vertical"
+                android:imeOptions="actionDone"
+                android:inputType="numberDecimal"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5ssp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:textSize="@dimen/commonTextSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:hint="@string/hint_MSRP"
+            android:textColorHint="@color/black"
+            android:textSize="@dimen/commonTextSize"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputMSRP"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="Price"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center_vertical"
+                android:imeOptions="actionDone"
+                android:inputType="numberDecimal"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5ssp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:textSize="@dimen/commonTextSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="0.5"
+            android:hint="@string/hint_BuyDown"
+            android:textColorHint="@color/black"
+            android:textSize="@dimen/commonTextSize"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputBuyDown"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="Price"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center_vertical"
+                android:imeOptions="actionDone"
+                android:inputType="numberDecimal"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5ssp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:textSize="@dimen/commonTextSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/inputSize"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:weightSum="1">
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/checkBoxBuyAsCase"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/inputSize"
+            android:layout_weight="0.5"
+            android:textColor="@color/black"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_5sdp"
+            android:text="@string/hint_BuyCase"
+            android:theme="@style/SCBSwitch"
+            android:textSize="@dimen/_12sdp"
+            tools:ignore="RtlSymmetry" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/inputSize"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15"
+            android:background="@drawable/header_text"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center"
+            android:text="@string/lbl_Dollar"
+            android:textColor="@color/white"
+            android:textSize="@dimen/headerTextSize" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/inputSize"
+            android:layout_weight="0.85"
+
+            android:hint="@string/hint_UnitInCase"
+            android:textColorHint="@color/black"
+            android:textSize="@dimen/commonTextSize"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputUnitInCase"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="Price"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center_vertical"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5ssp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:textSize="@dimen/_15sdp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/inputSize"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15"
+            android:background="@drawable/header_text"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center"
+            android:text="@string/lbl_Dollar"
+            android:textColor="@color/white"
+            android:textSize="@dimen/headerTextSize" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/inputSize"
+            android:layout_weight="0.85"
+
+            android:hint="@string/hint_CaseCost"
+            android:textColorHint="@color/black"
+            android:textSize="@dimen/commonTextSize"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputCaseCost"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="Price"
+
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center_vertical"
+                android:imeOptions="actionDone"
+                android:inputType="numberDecimal"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5ssp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:textSize="@dimen/_15sdp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/inputSize"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15"
+            android:background="@drawable/header_text"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center"
+            android:text="@string/lbl_Dollar"
+            android:textColor="@color/white"
+            android:textSize="@dimen/headerTextSize" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/inputSize"
+            android:layout_weight="0.85"
+
+            android:hint="@string/hint_CasePrice"
+            android:textColorHint="@color/black"
+            android:textSize="@dimen/commonTextSize"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputCasePrice"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="Price"
+
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center_vertical"
+                android:imeOptions="actionDone"
+                android:inputType="numberDecimal"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5ssp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:textSize="@dimen/_15sdp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

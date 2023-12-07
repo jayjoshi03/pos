@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.varitas.gokulpos.tablet.R" />
+
+        <variable
+            name="data"
+            type="com.varitas.gokulpos.tablet.response.Department" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+        <variable
+            name="category"
+            type="com.varitas.gokulpos.tablet.model.Category" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutDetails"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/regularTextSize"
+        android:elevation="@dimen/_4sdp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_5sdp"
+            android:text='@{Integer.toString(pos).length() > 1 ? Integer.toString(pos) : "0"+Integer.toString(pos)}'
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize"
+            tools:ignore="NestedWeights" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_5sdp"
+            android:singleLine="true"
+            android:text='@{data != null ? data.name : category.name}'
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize" />
+
+        <TextView
+            android:id="@+id/textViewParCategory"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center"
+            android:paddingStart="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_5sdp"
+            android:singleLine="true"
+            android:text='@{data != null ? data.isTaxable== true ? "Yes" : "No" : category != null ? category.sParentCategory : ""}'
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center"
+            android:paddingStart="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_5sdp"
+            android:singleLine="true"
+            android:text='@{data != null ? data.allowFoodStamp== true ? "Yes" : "No" : category != null ? category.sDepartment : ""}'
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize" />
+
+        <Button
+            android:id="@+id/textViewItemCount"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1"
+            android:backgroundTint="@color/lighterGrey"
+            android:contentDescription="ItemCount"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center"
+            android:text='@{data != null ? Integer.toString(data.itemCount).length() > 1 ? Integer.toString(data.itemCount) : "0"+Integer.toString(data.itemCount) : Integer.toString(category.itemCount).length() > 1 ? Integer.toString(category.itemCount) : "0"+Integer.toString(category.itemCount)}'
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.05" />
+
+        <ImageButton
+            android:id="@+id/imageButtonEdit"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.05"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="edit"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/ic_edit"
+            app:tint="@color/blue" />
+
+        <ImageButton
+            android:id="@+id/imageButtonDelete"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.05"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="delete"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/ic_delete"
+            app:tint="@color/red" />
+
+
+    </LinearLayout>
+
+</layout>

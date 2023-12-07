@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="stock"
+            type="com.varitas.gokulpos.tablet.response.Facility" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center_vertical"
+            android:text='@{stock.name ?? ""}'
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:textSize="@dimen/commonTextSize"
+            app:boxStrokeColor="@color/darkGrey"
+            app:boxStrokeWidthFocused="1dp"
+            app:hintTextColor="@color/darkGrey">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputQty"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="Price"
+                android:backgroundTint="@color/lighterGrey"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center_vertical|end"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5ssp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:textSize="@dimen/commonTextSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+</layout>

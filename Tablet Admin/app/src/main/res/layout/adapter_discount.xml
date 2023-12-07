@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="discount"
+            type="com.varitas.gokulpos.tablet.response.DiscountMapList" />
+
+        <import type="com.varitas.gokulpos.tablet.utilities.Utils" />
+
+        <import type="android.content.Context" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutDetails"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/regularTextSize"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <RadioButton
+            android:id="@+id/radioButtonIsSelect"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4"
+            android:button="@drawable/selector_check"
+            android:buttonTint="@color/pink"
+            android:checked="false"
+            android:drawablePadding="@dimen/_3sdp"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_3sdp"
+            android:paddingEnd="@dimen/_3sdp"
+            android:text='@{discount.discountName}'
+            android:textSize="@dimen/commonTextSize" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_3sdp"
+            android:paddingEnd="@dimen/_3sdp"
+            android:singleLine="true"
+            android:text='@{discount.sDiscountType}'
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center_vertical|end"
+            android:paddingStart="@dimen/_3sdp"
+            android:paddingEnd="@dimen/_3sdp"
+            android:singleLine="true"
+            android:text='@{Utils.INSTANCE.setAmountWithCurrency(context,discount.minimumAmount)}'
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center_vertical|end"
+            android:paddingStart="@dimen/_3sdp"
+            android:paddingEnd="@dimen/_3sdp"
+            android:singleLine="true"
+            android:text='@{Utils.INSTANCE.getTwoDecimalValue(discount.discountAmount)}'
+            android:textColor="@color/black"
+            android:textSize="@dimen/commonTextSize" />
+    </LinearLayout>
+
+</layout>
